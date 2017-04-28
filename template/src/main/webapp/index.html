@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="${_basePath}/layui/css/layui.css">
+</head>
+<body>
+<span class="layui-breadcrumb" lay-separator="|">
+  <a href="">USER</a>
+  <a href="">USER</a>
+  <a href="">USER</a>
+  <a href="">USER</a>
+</span>
+<script src="${_basePath}layui/layui.js"></script>
+<script>
+//导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element();
+});
+</script>
+</body>
+</html>

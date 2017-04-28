@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>自动生成简系统</title>
+<link rel="stylesheet" href="${_basePath}/layui/css/layui.css">
+</head>
+<body>
+<div>
+	<div class="top">
+		<div>
+			<ul class="layui-nav" lay-filter="topNav">
+			  <li class="layui-nav-item"><a href="">A</a></li>
+			  <li class="layui-nav-item"><a href="">B</a></li>
+			  <li class="layui-nav-item"><a href="">C</a></li>
+			  <li class="layui-nav-item"><a href="">D</a></li>
+			  <li class="layui-nav-item"><a href="">E</a></li>
+			  <li class="layui-nav-item"><a href="">F</a></li>
+			  <li class="layui-nav-item"><a href="">G</a></li>
+			  <li class="layui-nav-item"><a href="">H</a></li>
+			  <li class="layui-nav-item"><a href="">I</a></li>
+			  <li class="layui-nav-item"><a href="">J</a></li>
+			  <li class="layui-nav-item"><a href="">K</a></li>
+			  <li class="layui-nav-item"><a href="">L</a></li>
+			  <li class="layui-nav-item"><a href="">M</a></li>
+			  <li class="layui-nav-item"><a href="">N</a></li>
+			  <li class="layui-nav-item"><a href="">O</a></li>
+			  <li class="layui-nav-item"><a href="">P</a></li>
+			  <li class="layui-nav-item"><a href="">Q</a></li>
+			  <li class="layui-nav-item"><a href="">R</a></li>
+			  <li class="layui-nav-item"><a href="">S</a></li>
+			  <li class="layui-nav-item"><a href="">T</a></li>
+			  <li class="layui-nav-item"><a href="">U</a></li>
+			  <li class="layui-nav-item"><a href="">V</a></li>
+			  <li class="layui-nav-item"><a href="">W</a></li>
+			  <li class="layui-nav-item"><a href="">X</a></li>
+			  <li class="layui-nav-item"><a href="">Y</a></li>
+			  <li class="layui-nav-item"><a href="">Z</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="content">
+		<div style="float:left;">
+			<ul class="layui-nav layui-nav-tree" lay-filter="leftNav">
+			  <li class="layui-nav-item"><a href="">A</a></li>
+			  <li class="layui-nav-item"><a href="">B</a></li>
+			  <li class="layui-nav-item"><a href="">C</a></li>
+			  <li class="layui-nav-item"><a href="">D</a></li>
+			  <li class="layui-nav-item"><a href="">E</a></li>
+			  <li class="layui-nav-item"><a href="">F</a></li>
+			  <li class="layui-nav-item"><a href="">G</a></li>
+			  <li class="layui-nav-item"><a href="">H</a></li>
+			  <li class="layui-nav-item"><a href="">I</a></li>
+			  <li class="layui-nav-item"><a href="">J</a></li>
+			  <li class="layui-nav-item"><a href="">K</a></li>
+			  <li class="layui-nav-item"><a href="">L</a></li>
+			  <li class="layui-nav-item"><a href="">M</a></li>
+			  <li class="layui-nav-item"><a href="">N</a></li>
+			  <li class="layui-nav-item"><a href="">O</a></li>
+			  <li class="layui-nav-item"><a href="">P</a></li>
+			  <li class="layui-nav-item"><a href="">Q</a></li>
+			  <li class="layui-nav-item"><a href="">R</a></li>
+			  <li class="layui-nav-item"><a href="">S</a></li>
+			  <li class="layui-nav-item"><a href="">T</a></li>
+			  <li class="layui-nav-item"><a href="">U</a></li>
+			  <li class="layui-nav-item"><a href="">V</a></li>
+			  <li class="layui-nav-item"><a href="">W</a></li>
+			  <li class="layui-nav-item"><a href="">X</a></li>
+			  <li class="layui-nav-item"><a href="">Y</a></li>
+			  <li class="layui-nav-item"><a href="">Z</a></li>
+			</ul>
+		</div>
+		<div style="float:left;margin-left:20px;">
+			<div>
+				<div>
+					<span class="layui-breadcrumb" lay-separator="|">
+					  <a href="">USER</a>
+					  <a href="">USER</a>
+					  <a href="">USER</a>
+					  <a href="">USER</a>
+					</span>
+				</div>
+				<div>
+					<fieldset class="layui-elem-field">
+					  <legend><a href="${_basePath}/_user/list" title="跳转到USER表详情页面">USER</a> - 这里是说明</legend>
+					  <div class="layui-field-box">
+						<table class="layui-table">
+						  <thead>
+						    <tr>
+						      <th>field</th>
+						      <th>type</th>
+						      <th>default</th>
+						      <th>not Null</th>
+						      <th>comment</th>
+						    </tr> 
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <td>ID</td>
+						      <td>integer</td>
+						      <td></td>
+						      <td>true</td>
+						      <td>主键</td>
+						    </tr>
+						    <tr>
+						      <td>name</td>
+						      <td>varchar(45)</td>
+						      <td></td>
+						      <td>true</td>
+						      <td>用户名称</td>
+						    </tr>
+						  </tbody>
+						</table>
+					  </div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="${_basePath}/layui/layui.js"></script>
+<script>
+//导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element();
+});
+</script>
+</body>
+</html>

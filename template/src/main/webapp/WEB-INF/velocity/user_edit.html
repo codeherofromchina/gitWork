@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+#if(${doFlag} == 'add')
+<title>新增USER</title>
+#elseif(${doFlag}  == 'edit')
+<title>新增更新USER</title>
+#end
+<link rel="stylesheet" href="${_basePath}/layui/css/layui.css">
+</head>
+<body>
+<div>
+	<div class="top">
+		<div>
+			<ul class="layui-nav" lay-filter="topNav">
+			  <li class="layui-nav-item"><a href="">A</a></li>
+			  <li class="layui-nav-item"><a href="">B</a></li>
+			  <li class="layui-nav-item"><a href="">C</a></li>
+			  <li class="layui-nav-item"><a href="">D</a></li>
+			  <li class="layui-nav-item"><a href="">E</a></li>
+			  <li class="layui-nav-item"><a href="">F</a></li>
+			  <li class="layui-nav-item"><a href="">G</a></li>
+			  <li class="layui-nav-item"><a href="">H</a></li>
+			  <li class="layui-nav-item"><a href="">I</a></li>
+			  <li class="layui-nav-item"><a href="">J</a></li>
+			  <li class="layui-nav-item"><a href="">K</a></li>
+			  <li class="layui-nav-item"><a href="">L</a></li>
+			  <li class="layui-nav-item"><a href="">M</a></li>
+			  <li class="layui-nav-item"><a href="">N</a></li>
+			  <li class="layui-nav-item"><a href="">O</a></li>
+			  <li class="layui-nav-item"><a href="">P</a></li>
+			  <li class="layui-nav-item"><a href="">Q</a></li>
+			  <li class="layui-nav-item"><a href="">R</a></li>
+			  <li class="layui-nav-item"><a href="">S</a></li>
+			  <li class="layui-nav-item"><a href="">T</a></li>
+			  <li class="layui-nav-item layui-this"><a href="">U</a></li>
+			  <li class="layui-nav-item"><a href="">V</a></li>
+			  <li class="layui-nav-item"><a href="">W</a></li>
+			  <li class="layui-nav-item"><a href="">X</a></li>
+			  <li class="layui-nav-item"><a href="">Y</a></li>
+			  <li class="layui-nav-item"><a href="">Z</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="content">
+		<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+		  	#if(${doFlag} == 'add')
+				<legend>新增USER表</legend>
+			#elseif(${doFlag}  == 'edit')
+			 	<legend>更新USER表</legend>
+			#end
+		</fieldset>
+		#if(${doFlag} == 'add')
+			<form class="layui-form" method="post" id="mainForm" action="${_basePath}/_user/addSubmit">
+		#elseif(${doFlag}  == 'edit')
+		 	<form class="layui-form" method="post" id="mainForm" action="${_basePath}/_user/editSubmit">
+		#end
+		  <div class="layui-form-item">
+		    <label class="layui-form-label">ID</label>
+		    <div class="layui-input-inline">
+		      <input type="text" name="id" readonly="true" value="$!{user.id}" placeholder="主键字段无需编辑" autocomplete="off" class="layui-input">
+		    </div>
+		  </div>
+		  <div class="layui-form-item">
+		    <label class="layui-form-label">NAME</label>
+		    <div class="layui-input-inline">
+		      <input type="text" name="name" required  lay-verify="required" placeholder="请输入NAME" value="$!{user.name}" autocomplete="off" class="layui-input">
+		    </div>
+		  </div>
+		  <div class="layui-form-item">
+		    <div class="layui-input-block">
+		      <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+		      <a href="${_basePath}/_user/list" class="layui-btn layui-btn-primary">返回</a>
+		    </div>
+		  </div>
+		</form>
+	</div>
+</div>
+<script src="${_basePath}/layui/layui.js"></script>
+<script>
+layui.use(['element','form','layer'], function(){
+	  var form = layui.form();
+	  var layer = layui.layer;
+	  
+	  #if($!{success} == true)
+		  #if(${doFlag} == 'add')
+			  layer.open({
+				  title: '成功提示' ,content: 'user信息添加成功',closeBtn: 0,btn:['返回列表','继续新增'],
+				  yes:function(){
+					  location.href="${_basePath}/_user/list";
+					  return false;
+				  },
+				  btn2:function(){
+					  document.getElementById("mainForm").reset();
+				  }
+			  });
+		  #elseif(${doFlag}  == 'edit')
+		  		layer.open({
+				  title: '成功提示' ,content: 'user信息编辑成功',closeBtn: 0,btn:['返回列表','重新编辑'],
+				  yes:function(){
+					  location.href="${_basePath}/_user/list";
+					  return false;
+				  }
+				});
+		  #end
+	  #elseif($!{success} == false)
+  	     //提示框显示错误信息
+		  layer.open({
+			  title: false,
+			  content: '$!{errMsg}',
+			  btn:['确认'],
+			  btnAlign: 'c'
+		  });
+	  #end
+	  
+});	  
+</script>
+</body>
+</html>
