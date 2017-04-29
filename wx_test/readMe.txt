@@ -1,0 +1,3 @@
+此项目主要是通过接收和发送微信的消息来控制用户的交互，消息的推送出来servlet类为WeiXinServerServlet，消息的发送主要参考 WeiXinService类和它的父类；同时添加了网页授权的代码，其中网页授权的地址servlet为 WeiXinPageServlet
+
+依赖工具jar项目为gitHub项目 ：https://github.com/Wechat-Group/weixin-java-tools
